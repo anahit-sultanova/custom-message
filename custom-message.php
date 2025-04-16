@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Custom Plugin
+ * Plugin Name: Custom message plugin
  * Description: Shows a message at the top of every page.
  * Version: 1.0.0
  * Author: Anahit Sultanova
@@ -10,7 +10,7 @@ add_action('wp_footer', 'smp_show_message');
 
 function smp_show_message() {
     echo '<div style="background:#ff0; padding:10px; text-align:center;">
-        This is a simple message from your plugin.....
+        This is a simple message from your plugin! 
     </div>';
 }
 
@@ -18,7 +18,7 @@ function smp_show_message() {
  * Checking the updates of plugin with tag 
 **/
 add_filter('plugin_action_links_custom-message/custom-message.php', function ($links) {
-    $links[] = '<a href="' . esc_url(add_query_arg('check_github_update', '1')) . '">Check for updates!</a>';
+    $links[] = '<a href="' . esc_url(add_query_arg('check_github_update', '1')) . '">Check for updates_</a>';
     return $links;
 });
 
@@ -40,7 +40,7 @@ add_filter('pre_set_site_transient_update_plugins', function ($transient) {
     $plugin_path = WP_PLUGIN_DIR . '/' . $slug;
 
     // Path to your version metadata JSON
-    $meta_url = 'https://raw.githubusercontent.com/soltonanna/custom-message/main/public/latest-release.json';
+    $meta_url = 'https://raw.githubusercontent.com/anahit-sultanova/custom-message/main/public/latest-release.json';
 
     $res = wp_remote_get($meta_url, [
         'headers' => [
