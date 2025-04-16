@@ -26,4 +26,7 @@ Shows a message at the top of every page.
 * testing 3
 
 = 1.0.4 =
-* testing 4
+* testing 4 with public - done
+
+= 1.0.5 =
+* testing 5 with private

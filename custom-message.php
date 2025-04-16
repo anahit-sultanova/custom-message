@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom message plugin
  * Description: Shows a message at the top of every page.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Author: Anahit Sultanova
  */
 
@@ -10,7 +10,7 @@ add_action('wp_footer', 'smp_show_message');
 
 function smp_show_message() {
     echo '<div style="background:#ff0; padding:10px; text-align:center;">
-        This is a simple message from your plugin-testing!
+        This is a simple message from your plugin-testing! Will deleted soon...
     </div>';
 }
 
