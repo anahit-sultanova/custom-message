@@ -1,0 +1,44 @@
+name: Release Plugin
+
+on:
+  push:
+    tags:
+      - 'v*'
+      
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Get version from tag
+        id: get_version
+        run: echo "version=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+
+      - name: Create metadata JSON
+        run: |
+          mkdir -p public
+          echo '{
+            "tag_name": "${{ steps.get_version.outputs.version }}",
+            "zip_url": "https://github.com/${{ github.repository }}/releases/download/${{ steps.get_version.outputs.version }}/custom-message.zip",
+            "html_url": "https://github.com/${{ github.repository }}/releases/tag/${{ steps.get_version.outputs.version }}"
+          }' > public/latest-release.json
+
+      - name: Zip plugin files (flat repo)
+        run: |
+          mkdir -p build
+          zip -r build/custom-message.zip . -x ".git/*" ".github/*"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: |
+            custom-message.zip
+            public/latest-release.json
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
