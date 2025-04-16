@@ -29,4 +29,7 @@ Shows a message at the top of every page.
 * testing 4 with public - done
 
 = 1.0.5 =
-* testing 5 with private
+* testing 5 with private - fail
+
+= 1.0.6 =
+* testing with public 2
