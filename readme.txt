@@ -15,3 +15,9 @@ Shows a message at the top of every page.
 == Changelog ==
 = 1.0.0 =
 * Added the plugin.
+
+= 1.0.1 =
+* testing 1
+
+= 1.0.2 =
+* testing 2

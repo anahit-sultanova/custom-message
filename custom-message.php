@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom message plugin
  * Description: Shows a message at the top of every page.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Anahit Sultanova
  */
 
@@ -18,7 +18,7 @@ function smp_show_message() {
  * Checking the updates of plugin with tag 
 **/
 add_filter('plugin_action_links_custom-message/custom-message.php', function ($links) {
-    $links[] = '<a href="' . esc_url(add_query_arg('check_github_update', '1')) . '">Check for updates___</a>';
+    $links[] = '<a href="' . esc_url(add_query_arg('check_github_update', '1')) . '">Check for updates!</a>';
     return $links;
 });
 
