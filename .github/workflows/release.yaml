@@ -3,8 +3,8 @@ name: Release Plugin
 on:
   push:
     tags:
-      - 'v*'
-      
+      - "v*"
+
 permissions:
   contents: write
 

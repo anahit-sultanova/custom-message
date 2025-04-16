@@ -16,23 +16,5 @@ Shows a message at the top of every page.
 = 1.0.0 =
 * Added the plugin.
 
-= 1.0.1 =
-* testing 1
-
-= 1.0.2 =
-* testing 2
-
-= 1.0.3 =
-* testing 3
-
-= 1.0.4 =
-* testing 4 with public - done
-
-= 1.0.5 =
-* testing 5 with private - fail
-
-= 1.0.6 =
-* testing with public 2
-
-= 1.0.7 =
-* testing with public 3
+= 1.1.0 =
+* test public
