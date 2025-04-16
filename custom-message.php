@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom message plugin
  * Description: Shows a message at the top of every page.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Anahit Sultanova
  */
 
@@ -10,7 +10,7 @@ add_action('wp_footer', 'smp_show_message');
 
 function smp_show_message() {
     echo '<div style="background:#ff0; padding:10px; text-align:center;">
-        This is a simple message from your plugin!!!!
+        This is a simple message from your plugin-testing!
     </div>';
 }
 
@@ -18,7 +18,7 @@ function smp_show_message() {
  * Checking the updates of plugin with tag 
 **/
 add_filter('plugin_action_links_custom-message/custom-message.php', function ($links) {
-    $links[] = '<a href="' . esc_url(add_query_arg('check_github_update', '1')) . '">Check for updates!</a>';
+    $links[] = '<a href="' . esc_url(add_query_arg('check_github_update', '1')) . '">Check for updates.</a>';
     return $links;
 });
 

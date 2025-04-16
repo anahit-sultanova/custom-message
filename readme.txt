@@ -21,3 +21,6 @@ Shows a message at the top of every page.
 
 = 1.0.2 =
 * testing 2
+
+= 1.0.3 =
+* testing 3
