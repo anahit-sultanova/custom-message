@@ -33,3 +33,6 @@ Shows a message at the top of every page.
 
 = 1.0.6 =
 * testing with public 2
+
+= 1.0.7 =
+* testing with public 3
