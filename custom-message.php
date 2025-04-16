@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom message plugin
  * Description: Shows a message at the top of every page.
- * Version: 1.1.0
+ * Version: 1.1.1
  * Author: Anahit Sultanova
  */
 
@@ -69,3 +69,24 @@ add_filter('pre_set_site_transient_update_plugins', function ($transient) {
 
     return $transient;
 });
+
+add_filter('plugins_api', function ($res, $action, $args) {
+    if ($action !== 'plugin_information') return $res;
+
+    if ($args->slug !== 'custom-message') return $res;
+
+    $meta_url = 'https://raw.githubusercontent.com/anahit-sultanova/custom-message/main/public/latest-release.json';
+    $res = wp_remote_get($meta_url);
+    if (is_wp_error($res)) return false;
+
+    $data = json_decode(wp_remote_retrieve_body($res));
+    if (empty($data->tag_name)) return false;
+
+    return (object)[
+        'name' => 'Custom Message',
+        'slug' => 'custom-message',
+        'version' => ltrim($data->tag_name, 'v'),
+        'download_link' => $data->zip_url,
+        'sections' => ['description' => 'Update from GitHub'],
+    ];
+}, 10, 3);

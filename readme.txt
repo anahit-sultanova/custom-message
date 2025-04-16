@@ -18,3 +18,6 @@ Shows a message at the top of every page.
 
 = 1.1.0 =
 * test public
+
+= 1.1.1 =
+* test clear caches
