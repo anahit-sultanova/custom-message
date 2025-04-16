@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Custom message plugin
  * Description: Shows a message at the top of every page.
- * Version: 1.0.3
+ * Version: 1.0.4
  * Author: Anahit Sultanova
  */
 
